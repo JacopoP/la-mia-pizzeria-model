@@ -7,12 +7,15 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
-            return View(Listino.Pizze);
+            using PizzeriaContext db = new PizzeriaContext();
+            List<Pizza> lista = db.pizze.ToList<Pizza>();
+            return View(lista);
         }
 
         public IActionResult PizzaDetail(int id)
         {
-            Pizza pizza = Listino.Pizze.FirstOrDefault(p => p.Id == id);
+            using PizzeriaContext db = new PizzeriaContext();
+            Pizza pizza = db.pizze.FirstOrDefault(x => x.Id == id);
             return View(pizza);
         }
     }
