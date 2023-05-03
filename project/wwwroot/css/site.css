@@ -24,3 +24,9 @@ body {
   height: 220px;
   object-fit: cover;
 }
+
+.detail_img{
+    height: calc(100vh - 325px);
+    min-height: 300px;
+    object-fit: cover;
+}

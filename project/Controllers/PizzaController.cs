@@ -9,5 +9,11 @@ namespace project.Controllers
         {
             return View(Listino.Pizze);
         }
+
+        public IActionResult PizzaDetail(int id)
+        {
+            Pizza pizza = Listino.Pizze.FirstOrDefault(p => p.Id == id);
+            return View(pizza);
+        }
     }
 }
